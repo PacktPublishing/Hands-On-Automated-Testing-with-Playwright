@@ -1,0 +1,1 @@
+await page.waitForRequest('https://example.com/api/data');

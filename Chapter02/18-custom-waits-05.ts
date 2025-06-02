@@ -1,0 +1,1 @@
+const popup = await page.waitForEvent('popup');

@@ -1,0 +1,1 @@
+await page.locator('xpath=//button[@type="submit"]').click();

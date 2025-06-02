@@ -1,0 +1,1 @@
+await expect(page.getByText('Welcome, John')).toBeVisible();

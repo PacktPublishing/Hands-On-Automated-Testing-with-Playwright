@@ -1,0 +1,1 @@
+await page.waitForFunction('document.querySelector(".my-element") !== null');

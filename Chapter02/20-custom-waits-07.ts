@@ -1,0 +1,1 @@
+await page.waitForTimeout(3000); // Wait for 3 seconds

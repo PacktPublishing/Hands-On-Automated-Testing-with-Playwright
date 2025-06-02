@@ -1,0 +1,1 @@
+await page.getByText('Welcome, John', { exact: true }).click();

@@ -1,0 +1,1 @@
+await page.getByText(/welcome, [A-Za-z]+$/i).click();
