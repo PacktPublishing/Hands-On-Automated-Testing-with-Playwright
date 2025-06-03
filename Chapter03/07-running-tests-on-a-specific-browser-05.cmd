@@ -1,0 +1,1 @@
+npx playwright test --project chromium --grep "user login"
