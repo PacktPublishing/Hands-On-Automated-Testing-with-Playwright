@@ -1,0 +1,1 @@
+npx playwright codegen https://www.google.com/

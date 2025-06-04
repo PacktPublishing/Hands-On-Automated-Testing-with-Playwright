@@ -1,0 +1,1 @@
+npx playwright codegen --lang=python
