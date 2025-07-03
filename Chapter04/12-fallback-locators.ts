@@ -1,12 +1,12 @@
 import { test, expect } from '@playwright/test';
 
-test('', async ({ page }) => {
+test('Google search button', async ({ page }) => {
 
   await page.goto('https://google.com');
 
   const locators = [
-    page.getByRole("button", { name: "Google Search" }),
     page.getByTestId('submit-button'),
+    page.getByRole("button", { name: "Google Search" }),
     page.getByText('Google Search'),
   ];
 
