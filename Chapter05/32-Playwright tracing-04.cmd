@@ -1,0 +1,1 @@
+npx playwright show-trace test-results/test-name/trace.zip
