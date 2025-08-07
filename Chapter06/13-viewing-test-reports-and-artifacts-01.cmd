@@ -1,0 +1,1 @@
+docker run --rm -v "$(pwd)/playwright-report:/app/playwright-report" playwright-tests

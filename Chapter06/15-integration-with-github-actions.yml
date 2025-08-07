@@ -1,0 +1,36 @@
+name: Deploy Playwright Report to GitHub Pages
+
+on:
+  push:
+    branches:
+      - master 
+
+permissions:
+  contents: write
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Build Docker image
+        run: docker build -t playwright-tests . 
+
+      - name: Run Playwright tests in Docker
+        run: docker run --rm -v "${{ github.workspace }}/playwright-report:/app/playwright-report" playwright-tests
+
+      - uses: actions/upload-artifact@v4
+        if: ${{ !cancelled() }}
+        with:
+          name: playwright-report
+          path: playwright-report/
+          retention-days: 30
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./playwright-report
+          publish_branch: gh-pages

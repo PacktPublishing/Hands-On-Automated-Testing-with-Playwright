@@ -1,0 +1,4 @@
+- name: Add link to report in summary
+  run: |
+    echo "## Test Report" >> $GITHUB_STEP_SUMMARY
+    echo "[View Test Report](https://${{ github.actor }}.github.io/test/playwright-report/)" >> $GITHUB_STEP_SUMMARY
