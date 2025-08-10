@@ -1,0 +1,1 @@
+ await expect(page.locator('#accept-terms')).not.toBeChecked(); 

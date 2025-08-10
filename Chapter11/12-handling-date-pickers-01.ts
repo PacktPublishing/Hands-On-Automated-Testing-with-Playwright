@@ -1,0 +1,1 @@
+await page.fill('input[type="date"]', '2025-08-08');

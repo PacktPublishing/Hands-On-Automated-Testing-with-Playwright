@@ -1,0 +1,1 @@
+await page.check('input[value="red"]')
