@@ -1,4 +1,4 @@
-const { test, expect, devices } = require('@playwright/test');
+import { test, expect, devices } from '@playwright/test';
 
 test.describe('Responsive layout on mobile', () => {
   test('should display the mobile navigation menu on iPhone 13 Pro', async ({ browser }) => {
@@ -19,3 +19,4 @@ test.describe('Responsive layout on mobile', () => {
     await context.close();
   });
 });
+
