@@ -1,0 +1,1 @@
+await page.touchscreen.tap(10, 10); // Taps near the top-left corner
