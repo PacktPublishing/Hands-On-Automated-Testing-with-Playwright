@@ -1,1 +1,0 @@
-npm install @axe-core/playwright --save-dev
