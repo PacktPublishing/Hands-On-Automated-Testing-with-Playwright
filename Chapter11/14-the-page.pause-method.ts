@@ -1,22 +1,29 @@
 import { test, expect, devices } from '@playwright/test';
 
-test.describe('Responsive layout on mobile', () => {
-  test('should display the mobile navigation menu on iPhone 13 Pro', async ({ browser }) => {
+test('Google autocomplete shows suggestions', async ({ browser }) => {
+  const iPhone15PM = devices['iPhone 15 Pro Max'];
 
-    const context = await browser.newContext({
-      ...devices['iPhone 15'],
-    });
-    const page = await context.newPage();
-    await page.goto('https://github.com');
-    const mobileMenuButton = page.getByRole('button', { name: 'Toggle navigation' });
-
-    // Pause execution here to inspect the page state
-    await page.pause();
-
-    await expect(mobileMenuButton).toBeVisible();
-
-    // Clean up the context
-    await context.close();
+  const context = await browser.newContext({
+    ... iPhone15PM ,
   });
-});
+  const page = await context.newPage();
+    
+  await page.goto('https://www.google.com');
 
+  // Type a query into the search box
+  const searchBox = await page.getByRole('textbox');
+  await searchBox.fill('playwright');
+
+  // Pause execution here to inspect the page state
+  await page.pause();
+
+  const suggestions = page.locator('ul[role="listbox"] li');
+  await expect(suggestions.first()).toBeVisible();
+
+  // Check that at least one suggestion contains "playwright"
+  const suggestionTexts = await suggestions.allTextContents();
+  expect(suggestionTexts.some(text => text.toLowerCase().includes('playwright'))).toBeTruthy();
+  
+  // Clean up the context
+  await context.close();
+});
