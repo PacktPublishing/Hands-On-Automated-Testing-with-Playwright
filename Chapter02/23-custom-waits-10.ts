@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 
-test('Change article language to Deutsch, async ({ page }) => {
+test('Change article language to Deutsch', async ({ page }) => {
   // Go to Wikipedia page
   await page.goto('https://en.wikipedia.org/wiki/Playwright_(software)');
 
@@ -18,3 +18,4 @@ test('Change article language to Deutsch, async ({ page }) => {
 
   console.log('Successfully navigated to German Wikipedia.');
 });
+
