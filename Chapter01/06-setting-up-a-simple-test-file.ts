@@ -1,4 +1,4 @@
-const { test, expect } = require('@playwright/test');
+import { test, expect } from '@playwright/test';
 
 test('homepage has Playwright in title', async ({ page }) => {
   // Navigate to the Playwright homepage
@@ -10,3 +10,4 @@ test('homepage has Playwright in title', async ({ page }) => {
   // Assert that the title contains 'Playwright'
   expect(title).toContain('Playwright');
 });
+
