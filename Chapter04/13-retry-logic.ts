@@ -1,10 +1,12 @@
-// Playwright’s retry feature
+// Waits until the loader disappears (retries until it passes)
 await expect(async () => {
-  await page.getByText("Login").click();
+  // Assert that the loader is no longer visible
+  await expect(page.locator('.loader')).not.toBeVisible();
 }).toPass({
-  timeout: 3000,
-  interval: 1000,
+  timeout: 3000,    // Try for 3 seconds
+  interval: 1000,   // Check every half second
 });
+
 
 // custom retry logic
 async function retryAction(action, maxAttempts = 3) {
