@@ -14,7 +14,8 @@ export const test = base.extend({
       for (const img of allImages) {
         const src = await img.getAttribute('src');
 
-        if (!src) {
+        // Check for missing or empty src attribute
+        if (!src || src.trim() === '') {
           brokenImages.push({ 
             src: 'Missing src attribute', 
             status: 'N/A' 
@@ -56,3 +57,4 @@ export const test = base.extend({
     await use(validateImages);
   },
 });
+
