@@ -19,5 +19,8 @@ test('measure LCP on google.com', async ({ page }) => {
 
   // Read the LCP value
   const lcpValue = await page.evaluate(() => window.__lcp());
-  console.log('Largest Contentful Paint:', lcpValue);
+  console.log('Largest Contentful Paint:', lcpValue, 'ms');
+
+  // Good LCP is <= 2s
+  expect(lcpValue).toBeLessThanOrEqual(2000); 
 });
