@@ -1,4 +1,4 @@
-import { test, expect } from '@playwright/test';
+import { test } from '@playwright/test';
 
 test('interacting with shadow dom using deprecated combinators', async ({ page }) => {
   await page.goto('webpage.html');
@@ -9,3 +9,4 @@ test('interacting with shadow dom using deprecated combinators', async ({ page }
   const buttonText = await internalButton.innerText();
   console.log(buttonText);
 });
+
