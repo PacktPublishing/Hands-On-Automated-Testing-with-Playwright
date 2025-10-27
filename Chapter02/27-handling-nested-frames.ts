@@ -1,16 +1,22 @@
 import { test, expect } from '@playwright/test';
 
-test('Interact with nested iframes', async ({ page }) => {
-  await page.goto('url');
+test('should correctly find text in all nested frames', async ({ page }) => {
+  await page.goto('https://the-internet.herokuapp.com/nested_frames');
 
-  // Locate the parent iframe
-  const parentFrame = page.frameLocator('#parentIframe');
+  // Locate the top frame (which contains the nested frames)
+  const topFrame = page.frameLocator('frame[name="frame-top"]');
 
-  // Locate the nested iframe inside the parent iframe
-  const nestedFrame = parentFrame.frameLocator('#nestedIframe');
+  // Locate the frames nested inside the 'topFrame'
+  const leftFrame = topFrame.frameLocator('frame[name="frame-left"]');
+  const middleFrame = topFrame.frameLocator('frame[name="frame-middle"]');
+  const rightFrame = topFrame.frameLocator('frame[name="frame-right"]');
 
-  // Interact with an element inside the nested iframe
-  await nestedFrame.locator('input[name="email"]')
-                   .fill('test@xyz.com');
-  await nestedFrame.locator('button').click();
+  // Locate the bottom frame (which is at the same level as 'topFrame')
+  const bottomFrame = page.frameLocator('frame[name="frame-bottom"]');
+
+  // Assert the text content of each frame
+  await expect(leftFrame.locator('body')).toHaveText('LEFT');
+  await expect(middleFrame.locator('body')).toHaveText('MIDDLE');
+  await expect(rightFrame.locator('body')).toHaveText('RIGHT');
+  await expect(bottomFrame.locator('body')).toHaveText('BOTTOM');
 });
