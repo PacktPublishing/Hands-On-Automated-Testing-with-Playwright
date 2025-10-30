@@ -3,3 +3,10 @@ strategy:
   matrix:
     os: [ubuntu-latest, windows-latest, macos-latest]
     browser: [chromium, firefox]
+
+steps:
+  - uses: actions/checkout@v4
+  - name: Install dependencies
+    run: npm install
+  - name: Run Playwright tests
+    run: npx playwright test --project=${{ matrix.browser }}
