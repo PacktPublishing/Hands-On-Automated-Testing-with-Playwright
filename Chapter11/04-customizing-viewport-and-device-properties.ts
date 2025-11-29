@@ -1,4 +1,4 @@
-import { test, expect } from '@playwright/test';
+import { test } from '@playwright/test';
 
 test('Custom mobile emulation test', async ({ browser }) => {
   const context = await browser.newContext({
@@ -14,3 +14,4 @@ test('Custom mobile emulation test', async ({ browser }) => {
 
   await context.close(); // closes all pages as well
 });
+
