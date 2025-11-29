@@ -1,4 +1,4 @@
-import { test, expect, chromium, Page, BrowserContext } from '@playwright/test';
+import { test, expect } from '@playwright/test';
 
 // Define the network conditions for a slow 3G connection
 const slow3G = {
@@ -10,6 +10,8 @@ const slow3G = {
 
 test.describe('Emulate Slow Network Conditions', () => {
   // This test is specifically for Chromium as it uses the CDP session.
+  // You can also define a custom project in your config so the tests 
+  // run only in Chromium.
   test.skip(
     ({ browserName }) => browserName !== 'chromium',
     'This feature is currently only supported on Chromium.'
