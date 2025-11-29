@@ -1,1 +1,0 @@
-npx playwright test --shard=2/2

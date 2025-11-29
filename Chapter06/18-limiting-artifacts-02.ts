@@ -1,1 +1,0 @@
-await page.screenshot({ path: `screenshots/test-A-${Date.now()}.png`, fullPage: false });
