@@ -1,1 +1,0 @@
-npx playwright test tests/login.spec.ts --debug
