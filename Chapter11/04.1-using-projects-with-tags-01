@@ -1,0 +1,40 @@
+// playwright.config.ts
+export default defineConfig({
+  // ... other global config options ...
+  projects: [
+    // Standard Functional Project
+    {
+      name: 'chromium',
+      use: {
+        ...devices['Desktop Chrome'],
+      },
+      // IMPORTANT: Set standard projects to ignore visual tests
+      grepInvert: /@visual/,
+    },
+
+    // Visual Regression Projects
+    // These projects exist ONLY to run tests tagged with @visual
+    {
+      name: 'visual-mobile',
+      use: {
+        viewport: { width: 390, height: 844 },
+      },
+      // Only run tests matching this tag
+      grep: /@visual/,
+    },
+    {
+      name: 'visual-tablet',
+      use: {
+        viewport: { width: 768, height: 1024 },
+      },
+      grep: /@visual/,
+    },
+    {
+      name: 'visual-desktop',
+      use: {
+        viewport: { width: 1920, height: 1080 },
+      },
+      grep: /@visual/,
+    },
+  ],
+});
