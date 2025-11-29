@@ -13,3 +13,4 @@ test('should log in successfully', async ({ page }) => {
   await expect(page).toHaveURL(/inventory.html/);
   await expect(page).toHaveTitle('Swag Labs');
 });
+
