@@ -1,0 +1,1 @@
+await page.route('**/*.{png,jpg,jpeg,svg,gif}', (route) => route.abort());
