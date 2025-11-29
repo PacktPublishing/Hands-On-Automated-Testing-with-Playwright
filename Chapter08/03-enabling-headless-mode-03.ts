@@ -1,10 +1,20 @@
-import { chromium } from 'playwright';
+import { defineConfig, devices } from '@playwright/test';
 
-(async () => {
-  // Headless mode
-  const browser = await chromium.launch({ headless: true });
-  const page = await browser.newPage();
-  await page.goto(' https://playwright.dev/');
-  // ... more actions
-  await browser.close();
-})();
+export default defineConfig({
+  projects: [
+    {
+      name: 'chromium',
+      use: {
+        ...devices['Desktop Chrome'],
+        headless: false,
+      },
+    },
+    {
+      name: 'firefox',
+      use: {
+        ...devices['Desktop Firefox'],
+        headless: true,
+      },
+    },
+  ],
+});
