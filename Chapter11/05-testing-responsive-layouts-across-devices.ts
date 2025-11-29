@@ -13,6 +13,6 @@ for (const viewport of viewports) {
       height: viewport.height 
     });
     await page.goto('https://www.whatsmybrowser.org/');
-    await page.screenshot({ path: `custom-emulation-${viewport.name}.png` });
+    await expect(page).toHaveScreenshot({ fullPage: true });
   });
 }
