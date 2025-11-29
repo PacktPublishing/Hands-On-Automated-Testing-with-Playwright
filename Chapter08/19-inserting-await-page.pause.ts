@@ -4,3 +4,4 @@ test('my debugging test', async ({ page }) => {
   await page.pause(); // Execution will pause here and open the Inspector
   // ... more actions
 });
+
