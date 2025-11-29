@@ -1,1 +1,0 @@
-npx playwright show-report
