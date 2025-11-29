@@ -1,0 +1,11 @@
+// tests/visual.spec.ts
+import { test, expect } from '@playwright/test';
+
+// The @visual tag connects this block to the projects in the config.
+test.describe('Visual regression @visual', () => {
+
+  test('homepage should look correct', async ({ page }) => {
+    await page.goto('https://www.whatsmybrowser.org/');
+    await expect(page).toHaveScreenshot({ fullPage: true });
+  });
+});
