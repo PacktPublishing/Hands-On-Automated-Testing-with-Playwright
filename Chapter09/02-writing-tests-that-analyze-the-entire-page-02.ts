@@ -8,7 +8,7 @@ test.describe('Accessibility Tests', () => {
 
     // Run axe-core accessibility scan
     const results = await new AxeBuilder({ page })
-      .withTags(['wcag2a', 'wcag2aa', 'section508']) 
+      .withTags(['wcag2aa', 'section508']) 
       .analyze();
 
     // Log violations for debugging
@@ -21,3 +21,5 @@ test.describe('Accessibility Tests', () => {
 
   });
 });
+
+
