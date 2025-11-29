@@ -9,9 +9,11 @@ test('Custom mobile emulation test', async ({ browser }) => {
   });
 
   const page = await context.newPage();
+
+  // This test's purpose is only to generate a screenshot using 
+  // a custom mobile emulation setup.
   await page.goto('https://www.whatsmybrowser.org');
   await page.screenshot({ path: 'custom-mobile-emulation.png' });
 
   await context.close(); // closes all pages as well
 });
-
