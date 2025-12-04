@@ -1,1 +1,0 @@
-await fs.unlink(downloadedFilePath);
