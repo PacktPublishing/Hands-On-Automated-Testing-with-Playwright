@@ -17,7 +17,6 @@ export const test = base.extend<{ adminAuthPage: Page }>({
     );
     await expect(loginPage.navMenu).toContainText("John Doe");
 
-    // await expect(setupPage.getByRole("navigation")).toContainText("John Doe");
     await setupContext.storageState({ path: storageStatePath });
     await setupContext.close();
 
@@ -33,4 +32,4 @@ export const test = base.extend<{ adminAuthPage: Page }>({
   },
 });
 
-export { expect };
+export { expect } from "@playwright/test";

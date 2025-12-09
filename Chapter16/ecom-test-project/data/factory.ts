@@ -7,7 +7,7 @@ import { faker } from "@faker-js/faker";
  * @param overrides - Optional object to override default generated values
  * @returns User object with firstName, lastName, email, password, address, city, state, zip, and country properties
  */
-export function createUser(overrides = {}) {
+export function createUser(_overrides = {}) {
   return {
     firstName: faker.person.firstName(),
     lastName: faker.person.lastName(),
@@ -28,7 +28,7 @@ export function createUser(overrides = {}) {
  * @param {number} count - Number of users to generate
  * @returns {Array<object>} Array of user objects
  */
-export function createUsers(count: number) {
+export function createUsers(count: number): Array<object> {
   return Array.from({ length: count }, () => createUser());
 }
 
