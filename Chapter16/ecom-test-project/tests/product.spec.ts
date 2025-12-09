@@ -8,7 +8,7 @@ test("Add product to cart", async ({ page }) => {
   await productPage.selectCategory("Hand Tools");
   await productPage.clickProductByIndex(0);
 
-  expect(productPage.productName).toHaveText("Combination Pliers");
+  await expect(productPage.productName).toHaveText("Combination Pliers");
 
   await productPage.addToCartButton.click();
   await expect(productPage.addedToCartMessage).toHaveText(
@@ -31,7 +31,7 @@ test("Add product to cart with admin auth fixture", async ({
   await productPage.selectCategory("Hand Tools");
   await productPage.clickProductByIndex(0);
 
-  expect(productPage.productName).toHaveText("Combination Pliers");
+  await expect(productPage.productName).toHaveText("Combination Pliers");
 
   await productPage.addToCartButton.click();
   await expect(productPage.addedToCartMessage).toHaveText(
