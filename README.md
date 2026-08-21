@@ -1,6 +1,6 @@
 # Hands On Automated Testing with Playwright
 
-<a href="https://www.packtpub.com/"><img src="https://static.packt-cdn.com/products/9781835467893/graphics/image/Packt_Logo_New.png" alt="Packt" height="60px" align="right"></a>
+<a href="https://www.packtpub.com/"><img src="https://static.packt-cdn.com/products/9781835467893/graphics/image/Packt_Logo_New.png" alt="Packt" height="40px" align="right"></a>
 
 This is the code repository for **Hands-On Automated Testing with Playwright**, published by Packt.
 
@@ -22,7 +22,7 @@ your test suite into a CI/CD pipeline. Throughout, real-world projects,
 including an e-commerce platform and a single-page application, give you
 hands-on experience you can apply directly to your own projects.
 
-<a href="https://www.amazon.com/Hands-Automated-Testing-Playwright-Microsofts/dp/1806106477"><img src="https://content.packt.com/_/image/original/B34148/cover_image.jpg?version=1768888862" alt="Book Name" height="300px" align="right"></a>
+<a href="https://www.amazon.com/Hands-Automated-Testing-Playwright-Microsofts/dp/1806106477"><img src="https://content.packt.com/_/image/original/B34148/cover_image.jpg?version=1768888862" alt="Book Name" height="330px" align="right"></a>
 
 This book covers the following exciting features:
 - Set up and configure Playwright for cross-browser testing
