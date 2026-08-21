@@ -1,6 +1,6 @@
 # Hands On Automated Testing with Playwright
 
-<a href="https://www.packtpub.com/"><img src="https://www.packtpub.com/rebuild/build/assets/packt-Dz-8EKdV.svg" alt="Packt" height="60px" align="right"></a>
+<a href="https://www.packtpub.com/"><img src="https://static.packt-cdn.com/products/9781835467893/graphics/image/Packt_Logo_New.png" alt="Packt" height="60px" align="right"></a>
 
 This is the code repository for **Hands-On Automated Testing with Playwright**, published by Packt.
 
